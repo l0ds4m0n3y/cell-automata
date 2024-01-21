@@ -3,7 +3,7 @@ import javax.swing.SwingUtilities;
 public class Main{
     public static void main(String[] args) {
         SwingUtilities.invokeLater(()->{
-            new CellularAutomata(111, CellularAutomata.EDGES);
+            new CellularAutomata(69, CellularAutomata.EDGES);
         });
     }
 }

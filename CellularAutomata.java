@@ -6,35 +6,30 @@ public class CellularAutomata extends JFrame{
     public static final int RANDOM = 0;
     public static final int SINGULAR = 1;
     public static final int EDGES = 2;
+    public static final int RANDOM_SINGULAR = 3;
     Random rand = new Random();
-    int seed;
 
-    CellularAutomata(int seed){
-        this.seed = seed;
+    void generateGUI(int seed){
         setTitle("Rule: " + seed);
-        getContentPane().add(new MyPanel(seed));
         pack();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
         setResizable(false);
+    }
+
+    CellularAutomata(int seed){
+        getContentPane().add(new MyPanel(seed));
+        generateGUI(seed);
     }
 
     CellularAutomata(){
-        this.seed = rand.nextInt(256);
-        setTitle("Rule " + seed);
+        int seed = rand.nextInt(256);
         getContentPane().add(new MyPanel(seed));
-        pack();
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setVisible(true);
-        setResizable(false);
+        generateGUI(seed);
     }
 
     CellularAutomata(int seed, int pattern){
-        setTitle("Rule " + seed);
         getContentPane().add(new MyPanel(seed, pattern));
-        pack();
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setVisible(true);
-        setResizable(false);
+        generateGUI(seed);
     }
 }

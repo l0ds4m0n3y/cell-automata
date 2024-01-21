@@ -40,6 +40,9 @@ public class MyPanel extends JPanel {
             case CellularAutomata.SINGULAR:
                 cells[cells.length / 2] = 1;
                 break;
+            case CellularAutomata.RANDOM_SINGULAR:
+                cells[rand.nextInt(numCells)] = 1;
+                break;
             default:
                 break;
         }
