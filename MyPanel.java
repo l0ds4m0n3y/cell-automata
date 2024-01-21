@@ -28,16 +28,16 @@ public class MyPanel extends JPanel {
         Arrays.fill(this.cells, 0);
 
         switch (pattern) {
-            case Frame.RANDOM:
+            case CellularAutomata.RANDOM:
                 for (int i = 0; i < cells.length; i++) {
                     cells[i] = rand.nextInt(2);
                 }
                 break;
-            case Frame.EDGES:
+            case CellularAutomata.EDGES:
                 cells[0] = 1;
                 cells[cells.length - 1] = 1;
                 break;
-            case Frame.SINGULAR:
+            case CellularAutomata.SINGULAR:
                 cells[cells.length / 2] = 1;
                 break;
             default:
